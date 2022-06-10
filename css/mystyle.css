@@ -1,15 +1,35 @@
-
+#containsubheader{
+	position: relative;
+}
+.subheader li{
+	display: inline-block;
+	font-weight: 500;
+}
+.subheader li a{
+	padding-top:0.625rem;
+	padding-left: 0.625rem;
+	padding-right: 0.625rem;	
+	line-height: 1.12;
+	display: block;
+}
+.subheader li a:hover{
+	color:darkorange !important;
+	transition:ease-in 0.35s;
+	-moz-transition:ease-in 0.35s;
+	-webkit-transition:ease-in 0.35s;	
+}
 #containcamket{
     float:left;
     position: relative;
     margin-left: 18.5rem;
 }
 .camket{
-    padding-top: 0.625rem;
+    padding-top: 0.65rem;
     font-size: 1.125rem;
     position: relative;
-    width:12.5rem;
-    height:9.375rem;
+    /* width:12.5rem;
+    height:9.375rem; */
+	width:100%;
     background-image: linear-gradient(white, #CECECE);
     border: 0.063rem solid #CCC;
     text-align: center;
