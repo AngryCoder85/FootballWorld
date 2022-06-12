@@ -226,8 +226,8 @@
     <div class="container">
         <div class="helpform">
             <h3>Câu hỏi của khách hàng</h3>
-            <form id="phanhoi" action="" method="post" class="mt-3">
-                <input class="form-control" type="text" name="" id="" placeholder="Đặt câu hỏi và nêu ý kiến của khách hàng...">
+            <form id="phanhoi" action="" method="post" class="mt-3" onsubmit="return checkhelp()">
+                <input class="form-control" type="text" name="" id="help" placeholder="Đặt câu hỏi và nêu ý kiến của khách hàng...">
                 <button type="submit" class="btn btn-primary mt-4">Gửi</button>
             </form>
             <p class="mt-4">Xem qua các mẫu giày mới tại <span class="btn btn-warning"><a href="./index.html">Trang chủ</a>
@@ -270,6 +270,18 @@
     <!-- footer2 -->
     <footer class="text-center text-danger fw-bolder fs-3">CÔNG TY CỔ PHẦN TRÁCH NHIỆM 4 THÀNH VIÊN</footer>
     <!-- footer2 -->
-
+    <!-- script -->
+    <script>
+        function checkhelp()
+        {
+            var hel = document.getElementById("help").value;
+            if(hel == null || hel == ""){
+                alert("Chưa điền ý kiến !!!");
+                return false;
+            }
+            alert("Cảm ơn ý kiến của bạn !!!")
+        }
+    </script>
+    <!-- script -->
 </body>
 </html>

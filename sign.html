@@ -235,22 +235,22 @@
         <div class="row mt-md-1 mt-sm-0">
             <div class="signform">
                 <div class="tab-sign active" id="register">
-                    <form action="" method="post">
+                    <form action="" method="post" onsubmit="return checkdk()">
                         <h6>Tên tài khoản đăng nhập</h6>
-                        <input type="text" name="" id="" class="form-control">
+                        <input type="text" name="" id="TK" class="form-control">
                         <h6>Mật khẩu</h6>
-                        <input type="password" name="" id="" class="form-control">
+                        <input type="password" name="" id="pw" class="form-control">
                         <h6>Xác thực mật khẩu</h6>
-                        <input type="password" name="" id="" class="form-control">
+                        <input type="password" name="" id="cpw" class="form-control">
                         <center><button type="submit" class="btn btn-primary mt-2">ĐĂNG KÝ</button></center>
                     </form>
                 </div>
                 <div class="tab-sign">
-                    <form action="" method="post" id="login">
+                    <form action="" method="post" id="login" onsubmit="return checkdn()">
                         <h6>Tài khoản</h6>
-                        <input type="text" name="" id="" class="form-control">
+                        <input type="text" name="" id="tenTK" class="form-control">
                         <h6>Mật khẩu</h6>
-                        <input type="password" name="" id="" class="form-control">
+                        <input type="password" name="" id="pwTK" class="form-control">
                         <center><button type="submit" class="btn btn-primary mt-2">ĐĂNG NHẬP</button></center>
                         <p class="mt-2">Chưa có tài khoản ? <a href="./sign.html" class="text-primary">Đăng ký</a></p>
                     </form>
@@ -309,6 +309,49 @@
 		this.classList.add("active");
 		pane.classList.add("active");})
 })
+    </script>
+    <!-- script -->
+    <!-- script -->
+    <script>
+        function checkdk()
+        {
+            var tk = document.getElementById("TK").value;
+            var pw = document.getElementById("pw").value;
+            var cpw = document.getElementById("cpw").value;
+
+            if(tk == null || tk == ""){
+                alert("Chưa điền tài khoản");
+                return false;
+            }
+            else if(pw == null || pw == ""){
+                alert("Chưa điền mật khẩu");
+                return false;
+            }
+            else if(cpw == null || cpw == ""){
+                alert("Chưa xác thực mật khẩu");
+                return false;
+            }
+            else if(pw != cpw){
+                alert("Mật khẩu không khớp");
+                return false;
+            }
+            alert("Đăng ký thành công !!!");
+        }
+        function checkdn()
+        {
+            var tendn = document.getElementById("tenTK").value;
+            var pwdn = document.getElementById("pwTK").value;
+
+            if(tendn == null || tendn == ""){
+                alert("Chưa điền tên tài khoản");
+                return false;
+            }
+            else if(pwdn == null || pwdn == ""){
+                alert("Chưa điền mật khẩu");
+                return false;
+            }
+            alert("Đăng nhập thành công !!!")
+        }
     </script>
     <!-- script -->
 </body>
